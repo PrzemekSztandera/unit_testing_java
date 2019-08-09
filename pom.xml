@@ -48,6 +48,11 @@
             <artifactId>junit-platform-launcher</artifactId>
             <version>1.5.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.1</version>
+        </dependency>
     </dependencies>
 
 </project>
