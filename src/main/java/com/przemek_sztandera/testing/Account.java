@@ -3,6 +3,8 @@ package com.przemek_sztandera.testing;
 class Account {
 
     private boolean active;
+    private Address defaultDeliveryAddress;
+
 
     Account() {
         this.active = false;
@@ -14,5 +16,13 @@ class Account {
 
     boolean isActive() {
         return active;
+    }
+
+    public Address getDefaultDeliveryAddress() {
+        return defaultDeliveryAddress;
+    }
+
+    public void setDefaultDeliveryAddress(Address defaultDeliveryAddress) {
+        this.defaultDeliveryAddress = defaultDeliveryAddress;
     }
 }
