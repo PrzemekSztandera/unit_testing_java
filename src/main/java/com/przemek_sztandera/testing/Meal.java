@@ -5,20 +5,23 @@ public class Meal {
     private int price;
     private String name;
 
-    public Meal(int price, String name) {
+    Meal(int price, String name) {
         this.price = price;
         this.name = name;
     }
 
-    public Meal(int price) {
+    Meal(int price) {
         this.price = price;
     }
 
-    public int getPrice() {
+    int getPrice() {
         return price;
     }
 
-    public int getDiscountedPrice(int discount) {
+    int getDiscountedPrice(int discount) {
+        if(discount > price) {
+            throw new IllegalArgumentException("Discount can not be higher than the price!");
+        }
         return price - discount;
     }
 
