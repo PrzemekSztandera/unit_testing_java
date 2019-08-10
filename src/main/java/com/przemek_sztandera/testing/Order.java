@@ -3,19 +3,30 @@ package com.przemek_sztandera.testing;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Order {
+class Order {
 
     private List<Meal> meals = new ArrayList<>();
 
-    public List<Meal> getMeals() {
+    List<Meal> getMeals() {
         return meals;
     }
 
-    public void addMealToOrder(Meal meal) {
+    void addMealToOrder(Meal meal) {
         this.meals.add(meal);
     }
 
-    public void removeMealFromOrder(Meal meal) {
+    void removeMealFromOrder(Meal meal) {
         this.meals.remove(meal);
+    }
+
+    void cancel() {
+        this.meals.clear();
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "meals=" + meals +
+                '}';
     }
 }

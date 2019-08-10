@@ -1,5 +1,7 @@
 package com.przemek_sztandera.testing;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -12,6 +14,20 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderTest {
+
+    private Order order;
+
+    @BeforeEach
+    void initializeOrder() {
+        System.out.println("Inside @BeforeEach method.");
+        order = new Order();
+    }
+
+    @AfterEach
+    void cleanUp() {
+        System.out.println("Inside @AfterEach method.");
+        order.cancel();
+    }
 
     @Test
     void testAssertArrayEquals() {
@@ -26,7 +42,6 @@ class OrderTest {
     @Test
     void mealListShouldBeEmptyAfterCreationOfOrder() {
         // given
-        Order order = new Order();
         List<Meal> list = order.getMeals();
 
         // then
@@ -39,7 +54,6 @@ class OrderTest {
     @Test
     void addingMealToOrderShouldIncreaseOrderSize() {
         // given
-        Order order = new Order();
         Meal meal = new Meal(10, "pizza");
 
         // when
@@ -55,7 +69,6 @@ class OrderTest {
     @Test
     void removingMealFromOrderShouldDecreaseOrderSize(){
         // given
-        Order order = new Order();
         Meal meal = new Meal(10, "pizza");
 
         // when
@@ -70,7 +83,6 @@ class OrderTest {
     @Test
     void mealsShouldBeInCorrectOrderAfterAddingThemToOrder() {
         // given
-        Order order = new Order();
         Meal meal1 = new Meal(10, "pizza");
         Meal meal2 = new Meal(5, "burger");
 
