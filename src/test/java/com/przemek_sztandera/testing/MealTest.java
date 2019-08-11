@@ -1,6 +1,7 @@
 package com.przemek_sztandera.testing;
 
 import org.junit.jupiter.api.DynamicTest;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestFactory;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -117,6 +118,7 @@ class MealTest {
         assertThat(price, lessThan(20));
     }
 
+    @Tag("Fries")
     @TestFactory
     Collection<DynamicTest> calculateMealPrices() {
         Order order = new Order();

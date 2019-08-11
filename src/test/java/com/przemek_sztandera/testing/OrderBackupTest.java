@@ -32,11 +32,11 @@ class OrderBackupTest {
     }
 
 
-
+    @Tag("Fries")
     @Test
     void backUpOrderWithOneMeal () throws IOException {
         // given
-        Meal meal = new Meal(10, "fries");
+        Meal meal = new Meal(10, "Fries");
         Order order = new Order();
         order.addMealToOrder(meal);
 
