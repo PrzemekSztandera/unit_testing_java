@@ -3,7 +3,14 @@ package com.przemek_sztandera.testing;
 public class Meal {
 
     private int price;
+    private int quantity;
     private String name;
+
+    public Meal(int price, int quantity, String name) {
+        this.price = price;
+        this.quantity = quantity;
+        this.name = name;
+    }
 
     Meal(int price, String name) {
         this.price = price;
@@ -12,6 +19,10 @@ public class Meal {
 
     Meal(int price) {
         this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     int getPrice() {
