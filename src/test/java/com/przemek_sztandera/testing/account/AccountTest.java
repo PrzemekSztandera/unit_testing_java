@@ -1,4 +1,4 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.account;
 
 
 import org.junit.jupiter.api.RepeatedTest;
@@ -77,5 +77,27 @@ class AccountTest {
             assertTrue(account.isActive());
         });
 
+    }
+
+    @Test
+    void invalidEmailShouldThrowException() {
+        // given
+        Account account = new Account();
+
+        // when
+        // then
+        assertThrows(IllegalArgumentException.class, () -> account.setEmail(".wrongemail@gmail.com"));
+    }
+
+    @Test
+    void validEmailShouldBeSet() {
+        // given
+        Account account = new Account();
+
+        // when
+        account.setEmail("email@gmail.com");
+
+        // then
+        assertThat(account.getEmail(), is("email@gmail.com"));
     }
 }

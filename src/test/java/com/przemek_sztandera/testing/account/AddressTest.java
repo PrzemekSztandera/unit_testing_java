@@ -1,4 +1,4 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.account;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;

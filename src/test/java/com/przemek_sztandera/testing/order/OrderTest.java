@@ -1,5 +1,8 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.order;
 
+import com.przemek_sztandera.testing.Meal;
+import com.przemek_sztandera.testing.extension.BeforeAfterExtension;
+import com.przemek_sztandera.testing.order.Order;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -108,5 +111,44 @@ class OrderTest {
 
         // then
         assertThat(list1, is(list2));
+    }
+
+    @Test
+    void orderTotalPriceShouldNotExceedsMaxIntValue() {
+        // given
+        Meal meal1 = new Meal(Integer.MAX_VALUE, "pizza");
+        Meal meal2 = new Meal(Integer.MAX_VALUE, "burger");
+
+        // when
+        order.addMealToOrder(meal1);
+        order.addMealToOrder(meal2);
+
+        // then
+        int sum = order.totalPrice();
+        System.out.println(sum);
+    }
+
+    @Test
+    void emptyOrderTotalPriceShouldEqualZero() {
+        // given
+        // order is created in BeforeEach
+
+        // then
+        assertThat(order.totalPrice(), is(0));
+    }
+
+    @Test
+    void cancelingOrderShouldRemoveAllItemsFromMealList() {
+        // given
+        Meal meal1 = new Meal(10, "pizza");
+        Meal meal2 = new Meal(5, "burger");
+
+        // when
+        order.addMealToOrder(meal1);
+        order.addMealToOrder(meal2);
+        order.cancel();
+
+        // then
+        assertThat(order.getMeals().size(), is(0));
     }
 }

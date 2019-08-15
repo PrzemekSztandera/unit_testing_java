@@ -1,5 +1,6 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.order;
 
+import com.przemek_sztandera.testing.Meal;
 import org.junit.jupiter.api.*;
 
 import java.io.FileNotFoundException;
@@ -37,7 +38,7 @@ class OrderBackupTest {
     void backUpOrderWithOneMeal () throws IOException {
         // given
         Meal meal = new Meal(10, "Fries");
-        Order order = new Order();
+        com.przemek_sztandera.testing.order.Order order = new com.przemek_sztandera.testing.order.Order();
         order.addMealToOrder(meal);
 
         // when

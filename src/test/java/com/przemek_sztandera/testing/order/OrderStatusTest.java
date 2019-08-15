@@ -1,5 +1,6 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.order;
 
+import com.przemek_sztandera.testing.order.OrderStatus;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 

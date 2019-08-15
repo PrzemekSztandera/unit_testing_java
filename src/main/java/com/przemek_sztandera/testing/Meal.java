@@ -12,12 +12,12 @@ public class Meal {
         this.name = name;
     }
 
-    Meal(int price, String name) {
+    public Meal (int price, String name) {
         this.price = price;
         this.name = name;
     }
 
-    Meal(int price) {
+    public Meal(int price) {
         this.price = price;
     }
 
@@ -25,7 +25,7 @@ public class Meal {
         return quantity;
     }
 
-    int getPrice() {
+    public int getPrice() {
         return price;
     }
 

@@ -1,4 +1,4 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.extension;
 
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;

@@ -1,4 +1,6 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.order;
+
+import com.przemek_sztandera.testing.order.Order;
 
 import java.io.*;
 
@@ -18,6 +20,9 @@ public class OrderBackup {
     }
 
     void backupOrder(Order order) throws IOException {
+        if(writer == null) {
+            throw new IOException("Backup file not created");
+        }
         writer.append(order.toString());
     }
 

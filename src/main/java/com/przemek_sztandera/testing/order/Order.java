@@ -1,17 +1,19 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.order;
+
+import com.przemek_sztandera.testing.Meal;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Order {
+public class Order {
 
     private List<Meal> meals = new ArrayList<>();
 
-    List<Meal> getMeals() {
+    public List<Meal> getMeals() {
         return meals;
     }
 
-    void addMealToOrder(Meal meal) {
+    public void addMealToOrder(Meal meal) {
         this.meals.add(meal);
     }
 
@@ -21,6 +23,10 @@ class Order {
 
     void cancel() {
         this.meals.clear();
+    }
+
+    int totalPrice() {
+       return this.meals.stream().mapToInt(meal -> meal.getPrice()).sum();
     }
 
     @Override

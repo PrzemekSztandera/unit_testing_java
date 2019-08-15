@@ -1,5 +1,6 @@
 package com.przemek_sztandera.testing;
 
+import com.przemek_sztandera.testing.order.Order;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

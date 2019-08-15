@@ -1,9 +1,12 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.account;
 
 class Account {
 
     private boolean active;
     private Address defaultDeliveryAddress;
+    private String email;
+    private final String REGEX =
+            "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
 
 
     Account() {
@@ -33,5 +36,19 @@ class Account {
 
     public void setDefaultDeliveryAddress(Address defaultDeliveryAddress) {
         this.defaultDeliveryAddress = defaultDeliveryAddress;
+    }
+
+    public void setEmail(String email) {
+
+        if(email.matches(REGEX)) {
+            this.email = email;
+        } else {
+            throw new IllegalArgumentException();
+        }
+
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

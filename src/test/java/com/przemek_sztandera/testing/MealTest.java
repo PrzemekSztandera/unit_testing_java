@@ -1,5 +1,7 @@
 package com.przemek_sztandera.testing;
 
+import com.przemek_sztandera.testing.extension.IAExceptionIgnoreExtension;
+import com.przemek_sztandera.testing.order.Order;
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,7 +19,7 @@ import java.util.stream.Stream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.DynamicTest.dynamicTest;
+
 
 class MealTest {
 

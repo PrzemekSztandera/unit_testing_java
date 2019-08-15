@@ -1,4 +1,4 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.account;
 
 public class Address {
     private String street;

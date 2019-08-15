@@ -1,4 +1,4 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.order;
 
 public enum OrderStatus {
     ORDERED,

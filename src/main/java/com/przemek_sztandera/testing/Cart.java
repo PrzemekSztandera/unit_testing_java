@@ -1,5 +1,7 @@
 package com.przemek_sztandera.testing;
 
+import com.przemek_sztandera.testing.order.Order;
+
 import java.util.ArrayList;
 import java.util.List;
 
