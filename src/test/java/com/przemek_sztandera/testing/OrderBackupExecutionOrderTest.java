@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class OrderBackupExecutionOrderTest {
 
     @Test
-    void callingBackupWithoutCreatingFileFirstShouldThrowException() throws IOException {
+    void callingBackupWithoutCreatingFileFirstShouldThrowException() {
         // given
         OrderBackup orderBackup = new OrderBackup();
 
