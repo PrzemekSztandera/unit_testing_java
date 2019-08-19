@@ -1,5 +1,6 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.cart;
 
+import com.przemek_sztandera.testing.Meal;
 import com.przemek_sztandera.testing.order.Order;
 
 import java.util.ArrayList;

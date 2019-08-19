@@ -1,5 +1,7 @@
-package com.przemek_sztandera.testing;
+package com.przemek_sztandera.testing.cart;
 
+import com.przemek_sztandera.testing.Meal;
+import com.przemek_sztandera.testing.cart.Cart;
 import com.przemek_sztandera.testing.order.Order;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
