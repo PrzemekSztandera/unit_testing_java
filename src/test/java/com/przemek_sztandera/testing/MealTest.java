@@ -2,10 +2,7 @@ package com.przemek_sztandera.testing;
 
 import com.przemek_sztandera.testing.extension.IAExceptionIgnoreExtension;
 import com.przemek_sztandera.testing.order.Order;
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,6 +16,8 @@ import java.util.stream.Stream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
 
 
 class MealTest {
@@ -144,6 +143,24 @@ class MealTest {
         }
 
         return dynamicTests;
+    }
+
+    @Disabled
+    @Test
+    void testMealSumPrice() {
+        // given
+        Meal meal = mock(Meal.class);
+
+        given(meal.getPrice()).willReturn(15);
+        given(meal.getQuantity()).willReturn(3);
+        given(meal.sumPrice()).willCallRealMethod();
+
+        // when
+        int result = meal.sumPrice();
+
+        // then
+        assertThat(result, is(equalTo(45)));
+
     }
 
     private int calculatePrice(int price, int quantity) {
